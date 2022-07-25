@@ -1,0 +1,7 @@
+spring:
+  profiles:
+    include: logging
+
+# Default port is 8080. This can be changed by changes its value below.
+server:
+  port: 6666
