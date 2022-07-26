@@ -29,7 +29,7 @@ public class Utility {
         if (!validData.containsKey(req.getId()))
             throw new InvalidRequestIdException("Invalid requestId. Please try again");
 
-        if (!req.getRandomNumbers().containsAll(validData.get(req.getId())) && req.getRandomNumbers().size() == validData.get(req.getId()).size())
+        if (!req.getRandomNumbers().containsAll(validData.get(req.getId())) || (req.getRandomNumbers().size() != validData.get(req.getId()).size()))
             throw new InvalidRandomNumbersException("Invalid random numbers, do not match with requestId. Please try again");
 
         return true;

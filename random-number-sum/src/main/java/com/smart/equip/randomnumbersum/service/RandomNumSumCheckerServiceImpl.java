@@ -16,10 +16,11 @@ public class RandomNumSumCheckerServiceImpl implements RandomNumSumCheckerServic
         Response response = new Response();
         int actualSum = request.getRandomNumbers().stream().reduce(0,Integer::sum);
 
-        response.setSuccess(actualSum == request.getSum()? true: false);
+        response.setSuccess(actualSum == request.getSum());
 
         response.setRandomNumbers(request.getRandomNumbers());
         response.setMessage(Utility.prepareMessage(response.isSuccess()));
+        response.setId(request.getId());
         return response;
     }
 }

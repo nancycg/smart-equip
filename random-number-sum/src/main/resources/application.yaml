@@ -1,7 +1,16 @@
 spring:
   profiles:
-    include: logging
+    include: logging,management
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+      spring:
+        jackson:
+          deserialization:
+            fail-on-unknown-properties=true:
 
-# Default port is 8080. This can be changed by changes its value below.
+# Default port is 8080. This value can be changed.
 server:
-  port: 6666
+  port: 8080

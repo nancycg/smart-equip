@@ -1,16 +1,16 @@
 package com.smart.equip.randomnumbersum.controller;
 
-import com.smart.equip.randomnumbersum.config.ValidJson;
-import com.smart.equip.randomnumbersum.exception.InvalidRandomNumbersException;
 import com.smart.equip.randomnumbersum.model.Request;
 import com.smart.equip.randomnumbersum.model.Response;
 import com.smart.equip.randomnumbersum.service.RandomNumCreateService;
 import com.smart.equip.randomnumbersum.service.RandomNumSumCheckerService;
 import com.smart.equip.randomnumbersum.util.Utility;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,13 +53,12 @@ public class RandomNumSumController {
     }
 
 
-    @PostMapping(value = "/verify")
-    public ResponseEntity<Response> verifySum(@ValidJson @RequestBody Request request){
+    @PostMapping(value = "/verify" , produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<Response> verifySum(@Valid @RequestBody final Request request) {
 
         Response response = null;
         if(request.getId() != null && Utility.validateRandomNumbersInRequest(request, data)){
             response = randomNumSumCheckerService.verifySum(request);
-            response.setId(request.getId());
         }
 
         return response != null && response.isSuccess() ? new ResponseEntity<>(response, HttpStatus.OK) : new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
