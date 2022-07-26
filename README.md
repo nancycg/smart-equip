@@ -77,5 +77,15 @@ few Running screenshots:
 
 ![image](https://user-images.githubusercontent.com/20887138/181005224-ed5f62f0-c53e-4f23-b5cd-73ac9621685b.png)
 
+Exception Handling:
+
+![image](https://user-images.githubusercontent.com/20887138/181007545-a0bbd795-76b5-494a-8326-9921946862d9.png)
+
+
+![image](https://user-images.githubusercontent.com/20887138/181007697-b929a835-900a-4fe4-a75a-4e496b5be906.png)
+
+
+![image](https://user-images.githubusercontent.com/20887138/181007814-8f638366-5f0e-4896-aca4-505e44fa54cd.png)
+
 
 
