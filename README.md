@@ -21,6 +21,12 @@ To make sure our application is accessed by humans and not a by any computers or
 
 ###Steps to run
 
+First step is clone the project to your system and open any IDE:
+
+git clone https://github.com/nancycg/smart-equip.git
+
+I am using intelliJ IDE.
+
 * Go to smartEquip\random-number-sum and run the batch file RandomRun.bat
 * The server get started on default port 8080
 * open postman
