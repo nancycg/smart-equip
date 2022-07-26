@@ -19,7 +19,7 @@ To make sure our application is accessed by humans and not a by any computers or
 * Code review is compulsory to merge into main
 
 
-###Steps to run
+### Steps to run
 
 First step is clone the project to your system and open any IDE:
 
@@ -27,10 +27,10 @@ git clone https://github.com/nancycg/smart-equip.git
 
 I am using intelliJ IDE.
 
-* Go to smartEquip\random-number-sum and run the batch file RandomRun.bat
-* The server get started on default port 8080
-* open postman
-* GET call localhost:8080/smart-equip/query to generate random numbers. Sample response as follows...
+* Go to smartEquip\random-number-sum folder and run the batch file  **RandomRun.bat**. The server get started on default port 8080. Please refer **application.yaml** file to change default PORT
+* open POSTMAN for making GET and POST calls
+* GET call **localhost:8080/smart-equip/query** to generate random numbers. Sample response as follows...
+
 ```json
 {
     "id": "2da7135a-45d4-4f40-894f-a45a42e30018",
@@ -45,10 +45,11 @@ I am using intelliJ IDE.
 ```
 
 
-* copy the id field for next request
+* copy the id field for next request. This is important for the success of next request.
 
 
-* POST call localhost:8080/smart-equip/verify with JSON body as below:
+* POST call **localhost:8080/smart-equip/verify** with JSON body as below[use copied id here]
+
 ```json
 {
     "id":"2da7135a-45d4-4f40-894f-a45a42e30018",
@@ -58,8 +59,9 @@ I am using intelliJ IDE.
 ```
 
 
-SUCCESS response:
+### SUCCESS response:
 
+```json
 {
     "id": "2da7135a-45d4-4f40-894f-a45a42e30018",
     "message": "That's great",
@@ -70,14 +72,16 @@ SUCCESS response:
     ],
     "success": true
 }
+```
 
-few Running screenshots:
+### Running screenshots:
 
 ![image](https://user-images.githubusercontent.com/20887138/181005126-9a3e5f6b-6482-4cd6-bead-f645c56910cb.png)
 
 ![image](https://user-images.githubusercontent.com/20887138/181005224-ed5f62f0-c53e-4f23-b5cd-73ac9621685b.png)
 
-Exception Handling:
+
+### Exception Handling:
 
 ![image](https://user-images.githubusercontent.com/20887138/181007545-a0bbd795-76b5-494a-8326-9921946862d9.png)
 
