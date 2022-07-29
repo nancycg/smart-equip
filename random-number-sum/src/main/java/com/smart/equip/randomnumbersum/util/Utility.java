@@ -1,6 +1,8 @@
 package com.smart.equip.randomnumbersum.util;
 
+import com.smart.equip.randomnumbersum.constants.Constant;
 import com.smart.equip.randomnumbersum.exception.InvalidRandomNumbersException;
+import com.smart.equip.randomnumbersum.exception.InvalidRequestException;
 import com.smart.equip.randomnumbersum.exception.InvalidRequestIdException;
 import com.smart.equip.randomnumbersum.model.Request;
 
@@ -33,5 +35,13 @@ public class Utility {
             throw new InvalidRandomNumbersException("Invalid random numbers, do not match with requestId. Please try again");
 
         return true;
+    }
+
+    public static boolean validateClientMessage(String clientMessage) {
+        if(clientMessage != null && clientMessage.equalsIgnoreCase(Constant.CLIENT_MESSAGE_REQUEST)){
+            return true;
+        } else {
+            throw new InvalidRequestException("Invalid message request. Please try again.");
+        }
     }
 }
