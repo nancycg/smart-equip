@@ -29,7 +29,16 @@ I am using intelliJ IDE.
 
 * Go to smartEquip\random-number-sum folder and run the batch file  **RandomRun.bat**. The server get started on default port 8080. Please refer **application.yaml** file to change default PORT
 * open POSTMAN for making GET and POST calls
-* GET call **localhost:8080/smart-equip/query** to generate random numbers. Sample response as follows...
+* POST call **localhost:8080/query** to generate random numbers. 
+
+Need to pass a request message in this request, without correct message we can not proceed further.
+Sample Request as follows...
+{
+  "clientMessage":"Hey Service, can you provide me a question with numbers to add?"
+}
+
+
+Sample response as follows...
 
 ```json
 {
@@ -48,7 +57,7 @@ I am using intelliJ IDE.
 * copy the id field for next request. This is important for the success of next request.
 
 
-* POST call **localhost:8080/smart-equip/verify** with JSON body as below[use copied id here]
+* POST call **localhost:8080/verify** with JSON body as below[use copied id here]
 
 ```json
 {
